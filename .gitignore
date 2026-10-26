@@ -1,0 +1,45 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.aws/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+
+# JavaScript
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Generated ML data, artifacts, and reports
+data/*
+!data/README.md
+artifacts/
+mlruns/
+mlartifacts/
+reports/
+*.joblib
+*.pkl
+*.pt
+*.pth
+*.onnx
+
+# Local tools and operating system files
+.DS_Store
+.idea/
+.vscode/
+*.log
+.codex/
+.agents/

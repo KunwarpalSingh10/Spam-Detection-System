@@ -1,0 +1,34 @@
+# PROPOSED CONTRACT ONLY: no application code consumes this file yet.
+# Sample values must be calibrated against measured traffic and evaluation data.
+schema_version: 1
+mode: observe_only
+paused: true
+
+actions:
+  training_enabled: false
+  canary_enabled: false
+  promotion_enabled: false
+  rollback_enabled: false
+
+limits:
+  max_training_runs_per_day: 2
+  max_concurrent_training_jobs: 1
+  release_cooldown_minutes: 60
+  max_canary_traffic_fraction: 0.05
+  max_action_attempts: 2
+
+evidence:
+  require_trusted_labels: true
+  require_independent_promotion_cohort: true
+  require_fresh_telemetry: true
+  require_both_classes_for_quality_gate: true
+
+# Leave gates unset until measured baselines and sample requirements exist.
+# A future controller must reject execution if required gates remain unset.
+gates:
+  minimum_new_labels: null
+  minimum_examples_per_class: null
+  minimum_spam_precision: null
+  maximum_recall_regression: null
+  maximum_request_p95_ms: null
+  maximum_daily_compute_cost_usd: null
